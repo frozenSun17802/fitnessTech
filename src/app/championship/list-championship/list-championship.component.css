@@ -1,0 +1,32 @@
+.post {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+}
+
+.mb-4 {
+    text-align: center;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    padding: 10px;
+
+}
+
+.delete-btn {
+    float: right;
+    margin-right: 10px;
+}
+
+.update-btn {
+    float: right;
+    margin-right: 10px;
+}
+
+.player-btn {
+    float: right;
+    margin-right: 10px;
+}

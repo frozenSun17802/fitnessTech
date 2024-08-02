@@ -1,0 +1,11 @@
+<app-nav-bar (featureLoaded)="onFeatureLoaded($event)"></app-nav-bar>
+
+<div class="row" style="text-align:center">
+    <div class="col-xs-12">
+        <h1>Wellcome page</h1>
+    </div>
+</div>
+<app-championship *ngIf="pageLoading==='championShip'"></app-championship>
+<app-team *ngIf="pageLoading==='team'"></app-team>
+<app-player *ngIf="pageLoading==='player'"></app-player>
+<app-match *ngIf="pageLoading==='match'"></app-match>

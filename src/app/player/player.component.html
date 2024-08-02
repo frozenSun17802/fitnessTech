@@ -1,0 +1,25 @@
+<div class="player-btn">
+    <button class="btn btn-primary" (click)="showPlayers()">Players</button>
+</div>
+
+<div class="player-btn">
+    <button class="btn btn-warning" (click)="openDialog('Add')">AddPlayer</button>
+</div>
+
+<div class="post p-3 mb-2" *ngFor="let player of players2 ">
+
+
+    <h2> firstName = {{player.firstName}}</h2>
+    <p> lastName = {{player.lastName}}</p>
+    <p> position = {{player.position}}</p>
+
+    <button class="btn btn-danger" style="margin-right: 10px;" (click)="removePlayer(player.key)">Remove</button>
+    <button class="btn btn-primary" (click)="updatePlayer(player)">Edit</button>
+
+
+</div>
+<div class="col-xs-12" *ngIf="isPlayerRemove">
+    <div class="alert alert-success">
+        <p>Delete Success</p>
+    </div>
+</div>

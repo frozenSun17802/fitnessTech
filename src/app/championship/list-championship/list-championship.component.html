@@ -1,0 +1,64 @@
+<div class="container">
+    <h1 class="mb-4 ">ChampionShips</h1>
+
+    <div class="row">
+        <div class="col-12">
+
+            <div class="post p-3 mb-2" *ngFor="let championship of championships2 ">
+                <div class="delete-btn">
+                    <button class="btn btn-danger" (click)="deleteChampionShip(championship.key)">Delete</button>
+                </div>
+                <div class="update-btn">
+                    <button class="btn btn-primary" (click)="updateChampionship(championship)">Edite</button>
+                </div>
+
+                <div class="update-btn">
+                    <button class="btn btn-primary" (click)="showsTeambyname(championship.key)">Shows Teams</button>
+                </div>
+
+                <div class="addTeam">
+                    <app-add-team (NewTeam)="onTeamAdd($event,championship.key)"></app-add-team>
+                </div>
+
+                <h2>Name = {{championship.name}}</h2>
+                <p> startDate = {{championship.startDate}}</p>
+                <p> endDate = {{championship.endDate}}</p>
+                <p> location = {{championship.location}}</p>
+                <p> description = {{championship.description}}</p>
+
+
+            </div>
+            <div class="col-xs-12" *ngIf="isTeamAdded">
+                <div class="alert alert-success">
+                    <p>Add Team Success</p>
+                </div>
+            </div>
+            <div class="col-xs-12" *ngIf="isDeleted">
+                <div class="alert alert-success">
+                    <p>Delete Success</p>
+                </div>
+            </div>
+
+            <div class=" post col-xs-12" *ngFor="let team of teamshows2">
+
+                <ul>
+                    <li>
+                        <h2>{{team.name}}</h2>
+                    </li>
+                    <div class="delete-btn">
+                        <button class="btn btn-danger" (click)="teamRemoveFromChampion(keychampion,team.key)">Delete
+                        </button>
+                    </div>
+                    <app-player [teamId]="team.key"></app-player>
+                </ul>
+
+            </div>
+            <div class="col-xs-12" *ngIf="isteamRemove">
+                <div class="alert alert-success">
+                    <p>Delete Success</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

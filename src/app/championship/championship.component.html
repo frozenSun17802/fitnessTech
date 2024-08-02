@@ -1,0 +1,30 @@
+<div class="row" style="padding-left: 50pt;padding-right: 50pt;">
+    <div class="col-xs-12">
+
+        <label class="mb-1"> Name</label>
+        <input type="text" class="form-control" [(ngModel)]="name">
+        <label class="mb-1"> Location</label>
+        <input type="text" class="form-control" [(ngModel)]="location">
+        <label class="mb-1"> StartDate</label>
+        <input type="date" class="form-control" [(ngModel)]="startDate">
+        <label class="mb-1"> EndDate</label>
+        <input type="date" class="form-control" [(ngModel)]="endDate">
+        <label class="mb-1"> Description</label>
+        <input type="text" class="form-control" [(ngModel)]="description">
+        <button class="btn btn-primary " style="margin-top: 20px;margin-bottom: 10px;" (click)="SendChampionShip()">
+            Save
+        </button>
+    </div>
+    <div class="col-xs-12" *ngIf="isAdded">
+        <div class="alert alert-success">
+            <p>Add Success</p>
+        </div>
+    </div>
+    <div class="col-xs-12" *ngIf="isUpdateDone">
+        <div class="alert alert-success">
+            <p>Update Success</p>
+        </div>
+    </div>
+</div>
+
+<app-list-championship (UpdateChampionShip)="onUpdateChampionShip($event)"></app-list-championship>
